@@ -39,8 +39,9 @@
     "@tarojs/components": "3.0.7",
     "@tarojs/runtime": "3.0.7",
     "@tarojs/taro": "3.0.7",
-    "vue-template-compiler": "^2.5.0",
-    "vue": "^2.5.0"
+    "taro-ui-vue": "^1.0.0-alpha.10",
+    "vue": "^2.5.0",
+    "vue-template-compiler": "^2.5.0"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",
