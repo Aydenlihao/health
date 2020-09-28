@@ -11,8 +11,8 @@
       <swiper-item>
         <view class="picture">
           <image :src="journey"></image>
-          <view class='phone'>{{phone}}</view>
-          <view class='time'>{{time}}</view>
+          <view class='phone_travel'>{{real_phone}}</view>
+          <view class='time_travel'>{{time}}</view>
         </view>
       </swiper-item>
     </swiper>
@@ -42,8 +42,8 @@
 <script>
 import Vue from 'vue'
 import "./index.less";
-import health from "../../asset/health.jpeg";
-import journey from "../../asset/journey.jpeg";
+import health from "../../asset/health.png";
+import journey from "../../asset/journey.png";
 import Taro from '@tarojs/taro'
 export default {
   name: "Index",
@@ -54,18 +54,19 @@ export default {
       isModal: false,
       name:'',
       phone:'',
-      time:'2019-08-07'
+      real_phone:'',
+      time:'2019-08-07 00:04:25'
     };
   },
   methods:{
     bindDateChange(e){
-      this.time = e.detail.value;
+      this.time = e.detail.value+' 00:04:25';
     },
     cancel(){
       this.isModal = false;
     },
     confirm(){
-        this.isModal = false;
+      this.isModal = false;
     }
   },
   watch:{
@@ -74,6 +75,7 @@ export default {
     },
     phone: function(newQuestion) {
       this.phone = newQuestion
+      this.real_phone = newQuestion.slice(0,3)+'****'+newQuestion.slice(newQuestion.length-4,newQuestion.length);
     },
     time:function (params) {
       console.log(params);
