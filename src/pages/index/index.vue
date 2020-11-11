@@ -8,11 +8,11 @@
           <view class='time'>{{time}}</view>
         </view>
       </swiper-item>
-      <swiper-item>
+      <swiper-item @tap='goToModal'>
         <view class="picture">
           <image :src="journey"></image>
           <view class='phone_travel'>{{real_phone}}</view>
-          <view class='time_travel'>{{time}}</view>
+          <view class='time_travel'>{{journey_time}}</view>
         </view>
       </swiper-item>
     </swiper>
@@ -31,7 +31,7 @@
           当前选择: {{time}}
         </view>
         </picker>
-        <view>
+        <view class="btn">
          <button @tap="cancel">取消</button>
          <button @tap='confirm'>确定</button>
         </view>
@@ -58,6 +58,12 @@ export default {
       time:'2019-08-07 00:04:25'
     };
   },
+  computed:{
+    journey_time(){
+      var reg = new RegExp('-','g')
+      return this.time.replace(reg,'.');
+    }
+  },
   methods:{
     bindDateChange(e){
       this.time = e.detail.value+' 00:04:25';
@@ -67,6 +73,11 @@ export default {
     },
     confirm(){
       this.isModal = false;
+    },
+    goToModal(){
+      Taro.navigateTo({
+        url:`/pages/modal/modal`
+      })
     }
   },
   watch:{

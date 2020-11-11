@@ -3,7 +3,7 @@
 .picture,
 image {
   width: 100%;
-  height: 100vh;
+  height: 216.4vw;
   position: relative;
 }
 input {
@@ -19,33 +19,37 @@ picker {
 .time_travel {
   position: absolute;
   height: 50rpx;
-  color: #d1def4;
+  color: #fff;
 }
 .name {
-  top: 20.5%;
+  top: 20.3%;
   left: 144rpx;
-  font-size: 40rpx;
+  font-size: 42rpx;
   color: #ecfbfb;
   font-weight: 500;
 }
 .time {
-  top: 25.3%;
+  top: 25.1%;
   left: 130rpx;
   padding: 0 20rpx;
+  font-size: 32rpx;
+  font-weight: 300;
 }
-.phone,
-.phone_travel {
+.phone {
   top: 29.5%;
   left: 174rpx;
 }
 .phone_travel {
+  top: 29.3%;
+  right: 51%;
   color: #48474d;
-  font-size: 34rpx;
+  font-size: 36rpx;
   font-weight: 700;
 }
 .time_travel {
-  top: 33.9%;
+  top: 33.6%;
   left: 286rpx;
+  font-size: 34rpx;
   color: #98979d;
 }
 .pop {
@@ -62,5 +66,16 @@ picker {
     transform: translate(-50%, -50%);
     background: #fff;
     border-radius: 20rpx;
+    input,
+    .picker {
+      padding: 0 20rpx;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      button {
+        flex: 1;
+      }
+    }
   }
 }

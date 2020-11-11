@@ -1,5 +1,5 @@
 export default {
-  pages: ["pages/index/index"],
+  pages: ["pages/index/index", "pages/modal/modal"],
   window: {
     backgroundTextStyle: "light",
     navigationBarBackgroundColor: "#fff",
