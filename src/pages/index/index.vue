@@ -45,6 +45,7 @@ import "./index.less";
 import health from "../../asset/health.png";
 import journey from "../../asset/journey.png";
 import Taro from '@tarojs/taro'
+import moment from "moment";
 export default {
   name: "Index",
   data() {
@@ -66,7 +67,7 @@ export default {
   },
   methods:{
     bindDateChange(e){
-      this.time = e.detail.value+' 00:04:25';
+      this.time = this.time?e.detail.value + ' ' + moment().format('hh:mm:ss'):this.time;
     },
     cancel(){
       this.isModal = false;
@@ -75,9 +76,8 @@ export default {
       this.isModal = false;
     },
     goToModal(){
-      Taro.navigateTo({
-        url:`/pages/modal/modal`
-      })
+      this.isModal = true;
+      this.time =this.time?this.time.split(' ')[0] + ' ' + moment().format('hh:mm:ss'):this.time;
     }
   },
   watch:{
