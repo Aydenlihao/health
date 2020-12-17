@@ -56,7 +56,7 @@ export default {
       name:'',
       phone:'',
       real_phone:'',
-      time:'2019-08-07 00:04:25'
+      time: moment().format('YYYY-MM-DD HH:mm:ss'),
     };
   },
   computed:{
@@ -67,7 +67,7 @@ export default {
   },
   methods:{
     bindDateChange(e){
-      this.time = this.time?e.detail.value + ' ' + moment().format('hh:mm:ss'):this.time;
+      this.time = this.time?e.detail.value + ' ' + moment().format('HH:mm:ss'):this.time;
     },
     cancel(){
       this.isModal = false;
