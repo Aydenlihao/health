@@ -1,6 +1,7 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "dist/",
   "projectname": "health",
+  "cloudfunctionRoot": "/cloud",
   "description": "health for every",
   "appid": "touristappid",
   "setting": {

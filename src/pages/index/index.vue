@@ -3,14 +3,14 @@
     <swiper class="container">
       <swiper-item>
         <view class="picture">
-          <image :src="health"></image>
+          <image src="cloud://health-6gpqfjsl2379a6bf.6865-health-6gpqfjsl2379a6bf-1304824676/health.png"></image>
           <view class='name'>{{name}}</view>
           <view class='time'>{{time}}</view>
         </view>
       </swiper-item>
       <swiper-item @tap='goToModal'>
         <view class="picture">
-          <image :src="journey"></image>
+          <image src="cloud://health-6gpqfjsl2379a6bf.6865-health-6gpqfjsl2379a6bf-1304824676/journey.png"></image>
           <view class='phone_travel'>{{real_phone}}</view>
           <view class='time_travel'>{{journey_time}}</view>
         </view>
@@ -42,16 +42,12 @@
 <script>
 import Vue from 'vue'
 import "./index.less";
-import health from "../../asset/health.png";
-import journey from "../../asset/journey.png";
 import Taro from '@tarojs/taro'
 import moment from "moment";
 export default {
   name: "Index",
   data() {
     return {
-      health: health,
-      journey: journey,
       isModal: false,
       name:'',
       phone:'',
